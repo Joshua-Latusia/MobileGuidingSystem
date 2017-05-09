@@ -1,0 +1,30 @@
+﻿<Page    
+    NavigationCacheMode="Required"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:maps="using:Windows.UI.Xaml.Controls.Maps"
+    xmlns:data="using:MobileGuidingSystem.Model.Data"
+    x:Class="MobileGuidingSystem.View.MainPage"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Rectangle Width="10000" Stretch="UniformToFill"></Rectangle>
+        <maps:MapControl x:Name="MyMap"
+                         MapServiceToken="hXfoPb3UobMURPpymfd8~0KFlzLHFoGrO6NViSu2ltQ~AhzGBC78z3Ww6lQE6Df1AETSVLvCRCt7Q_WXIMPTYgiPpkVf6kNv0RYgId0cy5a0"
+                         ZoomInteractionMode="GestureAndControl"
+                         RotateInteractionMode ="GestureAndControl"
+                         ZoomLevel="{x:Bind Model.Zoomlevel }"
+                         DesiredPitch="{x:Bind Model.DesiredPitch}"
+                         Center="{x:Bind Model.MyLocation}"
+                         Style="{x:Bind Model.MapStyle}"
+                         LandmarksVisible="True"
+                         MapElementClick="MyMap_OnMapElementClick">
+        </maps:MapControl>
+
+
+
+    </Grid>
+</Page>
+    

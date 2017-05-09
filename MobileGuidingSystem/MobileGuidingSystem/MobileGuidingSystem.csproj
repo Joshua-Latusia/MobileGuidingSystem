@@ -1,0 +1,469 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{AA84DD6D-AF56-4AB3-BE0B-30B6E9232F5D}</ProjectGuid>
+    <OutputType>AppContainerExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MobileGuidingSystem</RootNamespace>
+    <AssemblyName>MobileGuidingSystem</AssemblyName>
+    <DefaultLanguage>nl-NL</DefaultLanguage>
+    <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
+    <TargetPlatformVersion>10.0.10240.0</TargetPlatformVersion>
+    <TargetPlatformMinVersion>10.0.10240.0</TargetPlatformMinVersion>
+    <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <PackageCertificateKeyFile>MobileGuidingSystem_TemporaryKey.pfx</PackageCertificateKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <OutputPath>bin\ARM\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
+    <Content Include="Assets\4.jpg" />
+    <Content Include="Assets\audio_grote_klok.mp3" />
+    <Content Include="Assets\A_LOVE_OF_THUNDER.TTF" />
+    <Content Include="Assets\entered-pin.png" />
+    <Content Include="Assets\home-entered-pin.png" />
+    <Content Include="Assets\JSON\blindwalls.json" />
+    <Content Include="Assets\JSON\HistorischeKM.json" />
+    <None Include="project.json" />
+    <PRIResource Include="Strings\nl-NL\Resources.resw" />
+    <PRIResource Include="Strings\en-US\Resources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Data\Route.cs" />
+    <Compile Include="Model\Data\Sight.cs" />
+    <Compile Include="Model\User.cs" />
+    <Compile Include="Utils.cs" />
+    <Compile Include="ViewModel\MainModel.cs" />
+    <Compile Include="ViewModel\MapElementData.cs" />
+    <Compile Include="ViewModel\Model.cs" />
+    <Compile Include="View\ContentDialog1.xaml.cs">
+      <DependentUpon>ContentDialog1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\HelpPage.xaml.cs">
+      <DependentUpon>HelpPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\LanguageSelectionPage.xaml.cs">
+      <DependentUpon>LanguageSelectionPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\LoadingPage.xaml.cs">
+      <DependentUpon>LoadingPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\NavigationPage.xaml.cs">
+      <DependentUpon>NavigationPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\RouteSelectionPage.xaml.cs">
+      <DependentUpon>RouteSelectionPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SettingsPage.xaml.cs">
+      <DependentUpon>SettingsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SightPage.xaml.cs">
+      <DependentUpon>SightPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\SightsPage.xaml.cs">
+      <DependentUpon>SightsPage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+    <None Include="MobileGuidingSystem_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\avans_logo.png" />
+    <Content Include="Assets\background.jpg" />
+    <Content Include="Assets\blindwalls_logo.png" />
+    <Content Include="Assets\breda_logo.png" />
+    <Content Include="Assets\GO_logo_black.png" />
+    <Content Include="Assets\home-pin.png" />
+    <Content Include="Assets\nl.png" />
+    <Content Include="Assets\Pictures\AKACorleone.jpg" />
+    <Content Include="Assets\Pictures\BruceTMC.jpg" />
+    <Content Include="Assets\Pictures\Fin-Dac_04_thumbnail.jpg" />
+    <Content Include="Assets\Pictures\FRM.jpg" />
+    <Content Include="Assets\Pictures\Hedof.jpg" />
+    <Content Include="Assets\Pictures\Hedof2.jpg" />
+    <Content Include="Assets\Pictures\historische_km_1.jpg" />
+    <Content Include="Assets\Pictures\historische_km_10.jpg" />
+    <Content Include="Assets\Pictures\historische_km_11.jpg" />
+    <Content Include="Assets\Pictures\historische_km_12.jpg" />
+    <Content Include="Assets\Pictures\historische_km_13.jpg" />
+    <Content Include="Assets\Pictures\historische_km_14.jpg" />
+    <Content Include="Assets\Pictures\historische_km_15.jpg" />
+    <Content Include="Assets\Pictures\historische_km_16.jpg" />
+    <Content Include="Assets\Pictures\historische_km_17.jpg" />
+    <Content Include="Assets\Pictures\historische_km_18.jpg" />
+    <Content Include="Assets\Pictures\historische_km_19.jpg" />
+    <Content Include="Assets\Pictures\historische_km_2.jpg" />
+    <Content Include="Assets\Pictures\historische_km_20.jpg" />
+    <Content Include="Assets\Pictures\historische_km_21.jpg" />
+    <Content Include="Assets\Pictures\historische_km_22.jpg" />
+    <Content Include="Assets\Pictures\historische_km_23.jpg" />
+    <Content Include="Assets\Pictures\historische_km_24.jpg" />
+    <Content Include="Assets\Pictures\historische_km_25.jpg" />
+    <Content Include="Assets\Pictures\historische_km_26.jpg" />
+    <Content Include="Assets\Pictures\historische_km_3.jpg" />
+    <Content Include="Assets\Pictures\historische_km_4.jpg" />
+    <Content Include="Assets\Pictures\historische_km_5.jpg" />
+    <Content Include="Assets\Pictures\historische_km_6.jpg" />
+    <Content Include="Assets\Pictures\historische_km_7.jpg" />
+    <Content Include="Assets\Pictures\historische_km_8.jpg" />
+    <Content Include="Assets\Pictures\historische_km_9.jpg" />
+    <Content Include="Assets\Pictures\Ilseweisfelt.jpg" />
+    <Content Include="Assets\Pictures\Jeff_canham.jpg" />
+    <Content Include="Assets\Pictures\Joshua.jpg" />
+    <Content Include="Assets\Pictures\JukkaHakanen.jpg" />
+    <Content Include="Assets\Pictures\KratjeBeeld.jpg" />
+    <Content Include="Assets\Pictures\MCity.jpg" />
+    <Content Include="Assets\Pictures\mike_perry.jpg" />
+    <Content Include="Assets\Pictures\Moorman.jpg" />
+    <Content Include="Assets\Pictures\NoImage.png" />
+    <Content Include="Assets\Pictures\12419315_1745146409091040_8344336857113523544_o.jpg" />
+    <Content Include="Assets\Pictures\12671988_1745146489091032_173918473231665547_o.jpg" />
+    <Content Include="Assets\Pictures\12794991_1745146419091039_5917483190376375577_o.jpg" />
+    <Content Include="Assets\Pictures\12885804_1745146499091031_73445877108910940_o.jpg" />
+    <Content Include="Assets\Pictures\12901554_1745146399091041_9157739875105230545_o.jpg" />
+    <Content Include="Assets\Pictures\13719519_1299934780031848_804451467692806571_o.jpg" />
+    <Content Include="Assets\Pictures\2016_07_04_HELL_O_MONSTERS_Ralph_Roelse_Breda_NL_007.jpeg" />
+    <Content Include="Assets\Pictures\2016_07_04_HELL_O_MONSTERS_Ralph_Roelse_Breda_NL_011.jpeg" />
+    <Content Include="Assets\Pictures\2016_07_04_HELL_O_MONSTERS_Ralph_Roelse_Breda_NL_020.jpeg" />
+    <Content Include="Assets\Pictures\2016_07_04_HELL_O_MONSTERS_Ralph_Roelse_Breda_NL_024-kopie.jpeg" />
+    <Content Include="Assets\Pictures\2016_07_04_HELL_O_MONSTERS_Ralph_Roelse_Breda_NL_024.jpeg" />
+    <Content Include="Assets\Pictures\2016_07_04_HELL_O_MONSTERS_Ralph_Roelse_Breda_NL_048.jpeg" />
+    <Content Include="Assets\Pictures\2016_07_04_HELL_O_MONSTERS_Ralph_Roelse_Breda_NL_051.jpeg" />
+    <Content Include="Assets\Pictures\2016_07_04_HELL_O_MONSTERS_Ralph_Roelse_Breda_NL_089.jpeg" />
+    <Content Include="Assets\Pictures\2016_07_04_HELL_O_MONSTERS_Ralph_Roelse_Breda_NL_099.jpeg" />
+    <Content Include="Assets\Pictures\2016_07_04_HELL_O_MONSTERS_Ralph_Roelse_Breda_NL_105.jpeg" />
+    <Content Include="Assets\Pictures\7197389834_8b870a2bd9_o.jpg" />
+    <Content Include="Assets\Pictures\7197391966_183cffa800_o.jpg" />
+    <Content Include="Assets\Pictures\7197393954_7fb3d68b5f_o.jpg" />
+    <Content Include="Assets\Pictures\7197395728_a2dc123634_o.jpg" />
+    <Content Include="Assets\Pictures\7197403188_623d195dc0_o.jpg" />
+    <Content Include="Assets\Pictures\7197405018_f9ca6a561a_o.jpg" />
+    <Content Include="Assets\Pictures\Ben-Eine-PHOTEDby-EW-1-kopie.jpg" />
+    <Content Include="Assets\Pictures\boudewijnbollmann-01.jpg" />
+    <Content Include="Assets\Pictures\boudewijnbollmann-02.jpg" />
+    <Content Include="Assets\Pictures\boudewijnbollmann-03.jpg" />
+    <Content Include="Assets\Pictures\breda1.png" />
+    <Content Include="Assets\Pictures\breda2.png" />
+    <Content Include="Assets\Pictures\breda3.png" />
+    <Content Include="Assets\Pictures\breda4.png" />
+    <Content Include="Assets\Pictures\breda5.png" />
+    <Content Include="Assets\Pictures\Breda_Maikki_Rantala1.jpg" />
+    <Content Include="Assets\Pictures\Breda_Maikki_Rantala11.jpg" />
+    <Content Include="Assets\Pictures\Breda_Maikki_Rantala12.jpg" />
+    <Content Include="Assets\Pictures\Breda_Maikki_Rantala13.jpg" />
+    <Content Include="Assets\Pictures\Breda_Maikki_Rantala14.jpg" />
+    <Content Include="Assets\Pictures\Breda_Maikki_Rantala15.jpg" />
+    <Content Include="Assets\Pictures\Breda_Maikki_Rantala17.jpg" />
+    <Content Include="Assets\Pictures\Breda_Maikki_Rantala2.jpg" />
+    <Content Include="Assets\Pictures\Breda_Maikki_Rantala3.jpg" />
+    <Content Include="Assets\Pictures\Breda_Maikki_Rantala4.jpg" />
+    <Content Include="Assets\Pictures\Breda_Maikki_Rantala5.jpg" />
+    <Content Include="Assets\Pictures\Breda_Maikki_Rantala6.jpg" />
+    <Content Include="Assets\Pictures\Breda_Maikki_Rantala7.jpg" />
+    <Content Include="Assets\Pictures\Breda_Maikki_Rantala8.jpg" />
+    <Content Include="Assets\Pictures\bwg_damienpoulain_rosameininger-1599.jpg" />
+    <Content Include="Assets\Pictures\bwg_damienpoulain_rosameininger-1606.jpg" />
+    <Content Include="Assets\Pictures\bwg_damienpoulain_rosameininger-1684.jpg" />
+    <Content Include="Assets\Pictures\bwg_damienpoulain_rosameininger-1690.jpg" />
+    <Content Include="Assets\Pictures\bwg_damienpoulain_rosameininger-1760.jpg" />
+    <Content Include="Assets\Pictures\bwg_damienpoulain_rosameininger-1763-1.jpg" />
+    <Content Include="Assets\Pictures\bwg_damienpoulain_rosameininger-1763.jpg" />
+    <Content Include="Assets\Pictures\bwg_damienpoulain_rosameininger-1776.jpg" />
+    <Content Include="Assets\Pictures\bwg_damienpoulain_rosameininger-1785.jpg" />
+    <Content Include="Assets\Pictures\bwg_damienpoulain_rosameininger-1833.jpg" />
+    <Content Include="Assets\Pictures\bwg_damienpoulain_rosameininger-1861-1.jpg" />
+    <Content Include="Assets\Pictures\bwg_damienpoulain_rosameininger-1861.jpg" />
+    <Content Include="Assets\Pictures\bwg_damienpoulain_rosameininger-1891.jpg" />
+    <Content Include="Assets\Pictures\bwg_damienpoulain_rosameininger-1900.jpg" />
+    <Content Include="Assets\Pictures\bwg_damienpoulain_rosameininger-1921.jpg" />
+    <Content Include="Assets\Pictures\bwg_damienpoulain_rosameininger-1922.jpg" />
+    <Content Include="Assets\Pictures\bwg_damienpoulain_rosameininger-1935.jpg" />
+    <Content Include="Assets\Pictures\BWG_Staand_TB2.jpg" />
+    <Content Include="Assets\Pictures\csm-beschildering.jpg" />
+    <Content Include="Assets\Pictures\Dzia_Toekan_1024x768.jpg" />
+    <Content Include="Assets\Pictures\Eine-portret.png" />
+    <Content Include="Assets\Pictures\EW-Concordiastraat-01.jpeg" />
+    <Content Include="Assets\Pictures\EW-Concordiastraat-02.jpeg" />
+    <Content Include="Assets\Pictures\EW-Concordiastraat-03.jpeg" />
+    <Content Include="Assets\Pictures\EW-Concordiastraat-04.jpeg" />
+    <Content Include="Assets\Pictures\EW-Concordiastraat-05.jpeg" />
+    <Content Include="Assets\Pictures\EW-Concordiastraat-06-kopie.jpeg" />
+    <Content Include="Assets\Pictures\EW-Concordiastraat-06.jpeg" />
+    <Content Include="Assets\Pictures\EW-Concordiastraat-07.jpeg" />
+    <Content Include="Assets\Pictures\EW-Concordiastraat-08.jpeg" />
+    <Content Include="Assets\Pictures\EW-Fietsenstalling-01.jpg" />
+    <Content Include="Assets\Pictures\EW-Fietsenstalling-02.jpg" />
+    <Content Include="Assets\Pictures\EW-Fietsenstalling-03.jpg" />
+    <Content Include="Assets\Pictures\EW-Fietsenstalling-04.jpg" />
+    <Content Include="Assets\Pictures\EW-Fietsenstalling-05.jpg" />
+    <Content Include="Assets\Pictures\EW-Fietsenstalling-06.jpg" />
+    <Content Include="Assets\Pictures\EW-Fietsenstalling-07.jpg" />
+    <Content Include="Assets\Pictures\EW-Fietsenstalling-08.jpg" />
+    <Content Include="Assets\Pictures\EW-Fietsenstalling-09.jpg" />
+    <Content Include="Assets\Pictures\EW-Potkanstraat-01.jpg" />
+    <Content Include="Assets\Pictures\EW-Potkanstraat-02.jpg" />
+    <Content Include="Assets\Pictures\EW-Potkanstraat-03.jpg" />
+    <Content Include="Assets\Pictures\EW-Potkanstraat-04.jpg" />
+    <Content Include="Assets\Pictures\EW-Potkanstraat-05.jpg" />
+    <Content Include="Assets\Pictures\EW-Potkanstraat-06.jpg" />
+    <Content Include="Assets\Pictures\EW-Potkanstraat-07.jpg" />
+    <Content Include="Assets\Pictures\EW-Potkanstraat-08.jpg" />
+    <Content Include="Assets\Pictures\EW-Potkanstraat-09.jpg" />
+    <Content Include="Assets\Pictures\EW-Potkanstraat-10.jpg" />
+    <Content Include="Assets\Pictures\EW-Speelhuislaan-Bloos-01a-kopie.jpg" />
+    <Content Include="Assets\Pictures\EW-Speelhuislaan-Bloos-02.jpeg" />
+    <Content Include="Assets\Pictures\EW-Speelhuislaan-Bloos-03.jpeg" />
+    <Content Include="Assets\Pictures\EW-Speelhuislaan-Bloos-04-kopie.jpg" />
+    <Content Include="Assets\Pictures\EW-Speelhuislaan-Bloos-04.jpeg" />
+    <Content Include="Assets\Pictures\EW-Speelhuislaan-Bloos-05.jpeg" />
+    <Content Include="Assets\Pictures\EW-Speelhuislaan-Bloos-06.jpeg" />
+    <Content Include="Assets\Pictures\EW-Speelhuislaan-Bloos-08.jpeg" />
+    <Content Include="Assets\Pictures\EW-Speelhuislaan-Bloos-09.jpeg" />
+    <Content Include="Assets\Pictures\EW-Speelhuislaan-Elektron-01-kopie.jpg" />
+    <Content Include="Assets\Pictures\EW-Speelhuislaan-Elektron-02-kopie.jpg" />
+    <Content Include="Assets\Pictures\EW-Speelhuislaan-Elektron-03-kopie.jpg" />
+    <Content Include="Assets\Pictures\EW-Speelhuislaan-Elektron-03a-kopie.jpg" />
+    <Content Include="Assets\Pictures\EW-Speelhuislaan-Elektron-04-kopie.jpg" />
+    <Content Include="Assets\Pictures\EW-Speelhuislaan-Elektron-05-kopie.jpg" />
+    <Content Include="Assets\Pictures\EW-Speelhuislaan-Elektron-06-kopie.jpg" />
+    <Content Include="Assets\Pictures\EW-Speelhuislaan-Elektron-07-kopie.jpg" />
+    <Content Include="Assets\Pictures\EW-Speelhuislaan-Elektron-08-kopie.jpg" />
+    <Content Include="Assets\Pictures\EW-Speelhuislaan-Elektron-09-kopie.jpg" />
+    <Content Include="Assets\Pictures\EW-Speelhuislaan-Elektron-10-kopie.jpg" />
+    <Content Include="Assets\Pictures\EW-Veilingkade-01-kopie.jpg" />
+    <Content Include="Assets\Pictures\EW-Veilingkade-01.jpeg" />
+    <Content Include="Assets\Pictures\EW-Veilingkade-01a.jpeg" />
+    <Content Include="Assets\Pictures\EW-Veilingkade-02.jpeg" />
+    <Content Include="Assets\Pictures\EW-Veilingkade-02a.jpeg" />
+    <Content Include="Assets\Pictures\EW-Veilingkade-03.jpeg" />
+    <Content Include="Assets\Pictures\EW-Veilingkade-04.jpeg" />
+    <Content Include="Assets\Pictures\EW-Veilingkade-05-kopie-1.jpg" />
+    <Content Include="Assets\Pictures\EW-Veilingkade-05-kopie.jpg" />
+    <Content Include="Assets\Pictures\EW-Veilingkade-05.jpeg" />
+    <Content Include="Assets\Pictures\EW-Veilingkade-06.jpeg" />
+    <Content Include="Assets\Pictures\EW_nachtroute-Imagineer-0-kopie.jpg" />
+    <Content Include="Assets\Pictures\EW_nachtroute-Imagineer-2-kopie.jpg" />
+    <Content Include="Assets\Pictures\EW_nachtroute-Meaningful-1-kopie.jpg" />
+    <Content Include="Assets\Pictures\EW_nachtroute-Meaningful-2-kopie.jpg" />
+    <Content Include="Assets\Pictures\EW_nachtroute-Mesmerising-1-kopie.jpg" />
+    <Content Include="Assets\Pictures\EW_nachtroute-Mesmerising-2-kopie.jpg" />
+    <Content Include="Assets\Pictures\EW_nachtroute-Storytelling-3-kopie.jpg" />
+    <Content Include="Assets\Pictures\EW_nachtroute-Storytelling-4-kopie.jpg" />
+    <Content Include="Assets\Pictures\EW_nachtroute-Storytelling-4a-kopie.jpg" />
+    <Content Include="Assets\Pictures\EW_veteranenhuis-2.jpg" />
+    <Content Include="Assets\Pictures\EW_veteranenhuis-3-2.jpg" />
+    <Content Include="Assets\Pictures\EW_veteranenhuis-3-kopie.jpg" />
+    <Content Include="Assets\Pictures\EW_veteranenhuis-kopie.jpg" />
+    <Content Include="Assets\Pictures\Hedof_oase_mural_2_2013_RGB_1120-1.jpg" />
+    <Content Include="Assets\Pictures\Hedof_oase_mural_2_2013_RGB_1120.jpg" />
+    <Content Include="Assets\Pictures\Hedof_oase_mural_3_2013_RGB_1120.jpg" />
+    <Content Include="Assets\Pictures\Hedof_oase_mural_4_2013_RGB_1120.jpg" />
+    <Content Include="Assets\Pictures\Hedof_oase_mural_5_2013_RGB_1120.jpg" />
+    <Content Include="Assets\Pictures\IMG_5197-kopie.jpg" />
+    <Content Include="Assets\Pictures\IMG_5245-kopie.jpg" />
+    <Content Include="Assets\Pictures\IMG_6196-kopie-2.jpg" />
+    <Content Include="Assets\Pictures\IMG_6196-kopie.jpg" />
+    <Content Include="Assets\Pictures\IMG_6223-kopie.jpg" />
+    <Content Include="Assets\Pictures\IMG_6582-kopie.jpg" />
+    <Content Include="Assets\Pictures\IMG_6582-kopie3.jpg" />
+    <Content Include="Assets\Pictures\JOB.png" />
+    <Content Include="Assets\Pictures\KoffiebijTeun_1024x682_Pic1.jpg" />
+    <Content Include="Assets\Pictures\KoffiebijTeun_1024x682_Pic2.jpg" />
+    <Content Include="Assets\Pictures\KoffiebijTeun_1024x682_Pic3.jpg" />
+    <Content Include="Assets\Pictures\KoffiebijTeun_1024x682_Pic4.jpg" />
+    <Content Include="Assets\Pictures\KoffiebijTeun_1024x682_Pic6_Thumb.jpg" />
+    <Content Include="Assets\Pictures\KoffiebijTeun_576x768_Pic5.jpg" />
+    <Content Include="Assets\Pictures\Logo_AlleeWonen_160x160.png" />
+    <Content Include="Assets\Pictures\Logo_Electron_160x160.png" />
+    <Content Include="Assets\Pictures\LucaFont_Adieu_1.jpg" />
+    <Content Include="Assets\Pictures\LucaFont_Adieu_2.jpg" />
+    <Content Include="Assets\Pictures\LucaFont_Adieu_3.jpg" />
+    <Content Include="Assets\Pictures\LucaFont_Adieu_4.jpg" />
+    <Content Include="Assets\Pictures\Luca_st.png" />
+    <Content Include="Assets\Pictures\muur_csm_01.jpg" />
+    <Content Include="Assets\Pictures\muur_csm_01groot.jpg" />
+    <Content Include="Assets\Pictures\NoImage.png" />
+    <Content Include="Assets\Pictures\Nol_Pic1_web.jpg" />
+    <Content Include="Assets\Pictures\Nol_Pic2_web.jpg" />
+    <Content Include="Assets\Pictures\Nol_Pic3_web.jpg" />
+    <Content Include="Assets\Pictures\Nol_Pic4_web.jpg" />
+    <Content Include="Assets\Pictures\Nol_Pic5_web.jpg" />
+    <Content Include="Assets\Pictures\Nol_Pic6_web.jpg" />
+    <Content Include="Assets\Pictures\Nol_Pic7_web.jpg" />
+    <Content Include="Assets\Pictures\Nol_Pic8_web.jpg" />
+    <Content Include="Assets\Pictures\overzicht.png" />
+    <Content Include="Assets\Pictures\Robin.png" />
+    <Content Include="Assets\Pictures\rutgerTermolen.jpg" />
+    <Content Include="Assets\Pictures\scoutingkrant.jpg" />
+    <Content Include="Assets\Pictures\Smit.jpg" />
+    <Content Include="Assets\Pictures\Stephen_Powers.jpg" />
+    <Content Include="Assets\Pictures\TB_Mural_Pic1_web.jpg" />
+    <Content Include="Assets\Pictures\TB_Mural_Pic2_web.jpg" />
+    <Content Include="Assets\Pictures\TB_Mural_Pic3_web.jpg" />
+    <Content Include="Assets\Pictures\TB_Mural_Pic4_web.jpg" />
+    <Content Include="Assets\Pictures\TB_Web_Thumb.jpg" />
+    <Content Include="Assets\Pictures\Termohlen.jpg" />
+    <Content Include="Assets\Pictures\ThomasJurgen.jpg" />
+    <Content Include="Assets\Pictures\ZenkOne_Pic8.jpg" />
+    <Content Include="Assets\Pictures\ZenkOne_vlaszak-6-1024-kopie.jpg" />
+    <Content Include="Assets\Pictures\ZenkOne_vlaszak-6-1024.jpg" />
+    <Content Include="Assets\pin.png" />
+    <Content Include="Assets\PlayerPin.png" />
+    <Content Include="Assets\uk.png" />
+    <Content Include="Assets\vvv_logo.png" />
+    <Content Include="Assets\LockScreenLogo.scale-200.png" />
+    <Content Include="Assets\SplashScreen.scale-200.png" />
+    <Content Include="Assets\Square150x150Logo.scale-200.png" />
+    <Content Include="Assets\Square44x44Logo.scale-200.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Content Include="Assets\StoreLogo.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="View\ContentDialog1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\HelpPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\LanguageSelectionPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\LoadingPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\NavigationPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\RouteSelectionPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\SettingsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\SightPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\SightsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <SDKReference Include="WindowsMobile, Version=10.0.10586.0">
+      <Name>Windows Mobile Extensions for the UWP</Name>
+    </SDKReference>
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
+    <VisualStudioVersion>14.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
